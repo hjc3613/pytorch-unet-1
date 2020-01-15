@@ -119,6 +119,8 @@ def train_model(model, optimizer, scheduler, num_epochs=25):
     if os.path.exists('state_dict.pt'):
         model.load_state_dict(torch.load('state_dict.pt'))
         print('load existing model state')
+    else:
+        print('no state_dict.pt exists, please download from baidu yun if you wish to train more quickly!!, now the model trained from random initializer state.')
     model.to(device)
     best_model_wts = copy.deepcopy(model.state_dict())
     best_loss = 1e10
